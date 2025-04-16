@@ -6,13 +6,12 @@ from flask_cors import CORS
 app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
 
-EMAIL_ADDRESS = 'nupurpandey.work@gmail.com'
-EMAIL_PASSWORD = 'zpxf llka uzic awhi'
+EMAIL_ADDRESS = 'nupur@vize.co.in'
+EMAIL_PASSWORD = 'ogio wzhq cdwc nyrg'
 
 @app.route('/')
 def home():
     return render_template('index.html')
-
 @app.route('/send-mails', methods=['POST'])
 def send_mails():
     data = request.get_json()
@@ -37,4 +36,4 @@ def send_mails():
         return jsonify({'status': 'error', 'message': str(e)})
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0' port='80')
+    app.run(host='0.0.0.0', port='80')
